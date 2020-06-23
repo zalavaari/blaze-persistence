@@ -84,6 +84,7 @@
                         </goals>
                         <configuration>
                             <module>
+<!--                                Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make public java.lang.String com.blazebit.persistence.impl.function.entity.ValuesEntity.getValue() accessible: module com.blazebit.persistence.core.impl does not "exports com.blazebit.persistence.impl.function.entity" to module org.hibernate.orm.core-->
                                 <moduleInfoSource>
                                     module ${module.name} {
                                         requires java.sql;
@@ -92,6 +93,7 @@
                                         requires com.blazebit.persistence.core;
                                         requires com.blazebit.persistence.core.parser;
                                         exports com.blazebit.persistence.impl;
+                                        exports com.blazebit.persistence.impl.function.entity;
                                         uses com.blazebit.persistence.spi.EntityManagerFactoryIntegrator;
                                         uses com.blazebit.persistence.spi.ExtendedQuerySupport;
                                         provides com.blazebit.persistence.spi.CriteriaBuilderConfigurationProvider with com.blazebit.persistence.impl.CriteriaBuilderConfigurationProviderImpl;
