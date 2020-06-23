@@ -84,6 +84,7 @@
                         </goals>
                         <configuration>
                             <module>
+                                <!-- java.lang.module.ResolutionException: Module com.blazebit.persistence.integration.hibernate does not read a module that exports com.blazebit.persistence.view.spi -->
                                 <moduleInfoSource>
                                     module ${module.name} {
                                         requires java.sql;
@@ -91,6 +92,7 @@
                                         requires org.hibernate.orm.core;
                                         requires com.blazebit.persistence.core;
                                         requires com.blazebit.persistence.integration.hibernate.base;
+                                        requires com.blazebit.persistence.view;
                                         provides com.blazebit.persistence.integration.hibernate.base.HibernateAccess with com.blazebit.persistence.integration.hibernate.Hibernate53Access;
                                         provides com.blazebit.persistence.spi.EntityManagerFactoryIntegrator with com.blazebit.persistence.integration.hibernate.Hibernate53EntityManagerFactoryIntegrator;
                                         provides com.blazebit.persistence.view.spi.TransactionAccessFactory with com.blazebit.persistence.integration.hibernate.Hibernate5TransactionAccessFactory;
